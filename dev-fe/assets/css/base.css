@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+:root {
+    --color-one: #d1d5db;
+    --color-two: #a6a6a6;
+    --color-three: #84cbff;
+    --color-text: #5f5f60;
+    --font: 'Roboto';
+    --font2: 'Dancing Script', 'script';
+}
+
+body {
+    font-family: var(--font);
+    background: var(--color-one);
+}
+
+.container {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-blue-100 {
+    --tw-text-opacity: 1;
+    color: rgb(219 234 254/var(--tw-text-opacity));
+}
+
+.text-text {
+    color: var(--color-text);
+}

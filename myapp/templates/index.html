@@ -1,0 +1,35 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Trang chủ</title>
+	<link rel="stylesheet" href="{% static 'base.css' %}">
+	<link rel="stylesheet" href="{% static 'carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'dangtheodoi.css' %}">
+	<link rel="stylesheet" href="{% static 'doctruyen.css' %}">
+	<link rel="stylesheet" href="{% static 'login.css' %}">
+	<link rel="stylesheet" href="{% static 'reset.css' %}">
+	<link rel="stylesheet" href="{% static 'suatruyen.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+
+	<!-- font, icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+	{% block content %}
+	{%endblock %}
+</body>
+
+</html>

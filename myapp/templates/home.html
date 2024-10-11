@@ -1,0 +1,441 @@
+{% extends "index.html" %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block content %}
+{% load humanize %}
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/home/">Trang chủ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="suatruyen.html">Đăng truyện</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Thể loại
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul>
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Detective </a></li>
+                <li><a class="dropdown-item" href="#">Huyền Huyễn</a></li>
+                <li><a class="dropdown-item" href="#">Military</a></li>
+                <li><a class="dropdown-item" href="#">Seinen</a></li>
+                <li><a class="dropdown-item" href="#">Tragedy</a></li>
+
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Adventure</a></li>
+                <li><a class="dropdown-item" href="#">Doujinshi</a></li>
+                <li><a class="dropdown-item" href="#">Isekai</a></li>
+                <li><a class="dropdown-item" href="#">Mistery</a></li>
+                <li><a class="dropdown-item" href="#">Shoujo</a></li>
+                <li><a class="dropdown-item" href="#">Trọng sinh</a></li>
+
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Anime</a></li>
+                <li><a class="dropdown-item" href="#">Drama</a></li>
+                <li><a class="dropdown-item" href="#">Josei</a></li>
+                <li><a class="dropdown-item" href="#">Ngôn tình</a></li>
+                <li><a class="dropdown-item" href="#">Shoujo Ai</a></li>
+                <li><a class="dropdown-item" href="#">Truyện màu</a></li>
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
+                <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                <li><a class="dropdown-item" href="#">Mafia</a></li>
+                <li><a class="dropdown-item" href="#">One shot</a></li>
+                <li><a class="dropdown-item" href="#">Shounen</a></li>
+                <li><a class="dropdown-item" href="#">Webtoon</a></li>
+
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Cổ đại</a></li>
+                <li><a class="dropdown-item" href="#">Gender Bender</a></li>
+                <li><a class="dropdown-item" href="#">Magic</a></li>
+                <li><a class="dropdown-item" href="#">Psychological</a></li>
+                <li><a class="dropdown-item" href="#">Shounen Ai</a></li>
+                <li><a class="dropdown-item" href="#">Xuyên không</a></li>
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Comedy</a></li>
+                <li><a class="dropdown-item" href="#">Harem</a></li>
+                <li><a class="dropdown-item" href="#">Manhua</a></li>
+                <li><a class="dropdown-item" href="#">Romance</a></li>
+                <li><a class="dropdown-item" href="#">Slice of life</a></li>
+
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Comic</a></li>
+                <li><a class="dropdown-item" href="#">Historical</a></li>
+                <li><a class="dropdown-item" href="#">Manhwa</a></li>
+                <li><a class="dropdown-item" href="#">School Life</a></li>
+                <li><a class="dropdown-item" href="#">Sports</a></li>
+              </ul>
+              <ul>
+                <li><a class="dropdown-item" href="#">Demons</a></li>
+                <li><a class="dropdown-item" href="#">Horror</a></li>
+                <li><a class="dropdown-item" href="#">Martial Arts</a></li>
+                <li><a class="dropdown-item" href="#">Sci-fi</a></li>
+                <li><a class="dropdown-item" href="#">Supernatural</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Nhập tên truyện..." aria-label="Search">
+          <button class="btn inner-button" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <a class="inner-sign" href="login.html">Đăng nhập</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<main>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      {% for x in top3 %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+
+          <rect width="100%" height="75%" fill="#b2cfff" />
+        </svg>
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <div class="container">
+              <div class="c-item">
+                <div class="inner-image" style="background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000), url('{{x.anhnen.url}}');
+                                  background-size: cover; --tw-brightness :brightness(.75);background-position: top; border-radius: .5rem;
+                                  background-repeat: no-repeat; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);position: relative;
+                                  background-origin:content-box; top: 30px; filter: brightness(0.75);
+                                  ">
+                  <div class="text-end">
+                    <div class="inner-text">
+
+                      <h5>{{x.ten}}
+                      </h5>
+                      <p class="inner-desc"> {{x.mota}} </p>
+
+                    </div>
+                    <div class="text-button">
+                      <a class="btn btn-lg btn-primary" href="/truyen_id={{x.id}}/">Xem thông tin</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- MỚI CẬP NHẬT -->
+  <section id="new-update">
+    <div class="container">
+      <div class="inner-title font-bold">
+        mới cập nhật
+      </div>
+      <div class="inner-list">
+        <div class="row">
+          {% for x in list_new_update %}
+          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+            <a href="/truyen_id={{x.id}}/">
+              <img src="{{x.anhbia.url}}" alt="{{x.ten}}" loading="lazy" width="320" height="480">
+            </a>
+            <div class="inner-name">
+              <a href="#">
+                <h3>{{x.ten}}
+                </h3>
+              </a>
+              <a href="">
+                <h3 class="inner-chap">
+                  C.{{x.chapmoinhat.stt}}: {{x.chapmoinhat.thoigiandang|naturaltime}}
+                </h3>
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <a href="#" class="inner-nextpage">
+        <i class="fa-solid fa-angle-right"></i>
+        <span>Xem danh sách truyện</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- END MỚI CẬP NHẬT -->
+
+  <!-- TRUYỆN NỔI BẬT -->
+  <section id="best-mangas">
+    <div class="container">
+      <div class="inner-title font-bold text-blue-100">
+        truyện nổi bật
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <!-- theo tuần -->
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container-snap">
+                <div class="row">
+                  {% for x in list_top_view_tuan %}
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
+                    <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
+                    <div class="inner-content">
+                      <a href="#" style="color: black;">
+                        <h3>{{x.ten}} </h3>
+                      </a>
+                      <a href="#">
+                        <span>Chương {{x.chapmoinhat.stt}}</span>
+                      </a>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{forloop.counter}}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <!-- theo tháng -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container-snap">
+                <div class="row">
+                  {% for x in list_top_view_thang %}
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
+                    <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
+                    <div class="inner-content">
+                      <a href="#" style="color: black;">
+                        <h3>{{x.ten}} </h3>
+                      </a>
+                      <a href="#">
+                        <span>Chương {{x.chapmoinhat.stt}}</span>
+                      </a>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{forloop.counter}}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <!-- theo mọi lúc -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container-snap">
+                <div class="row" style="flex-wrap: wrap;">
+                  {% for x in list_top_view_moiluc %}
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
+                    <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
+                    <div class="inner-content">
+                      <a href="#" style="color: black;">
+                        <h3>{{x.ten}} </h3>
+                      </a>
+                      <a href="#">
+                        <span>Chương {{x.chapmoinhat.stt}}</span>
+                      </a>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{forloop.counter}}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END TRUYỆN NỔI BẬT -->
+
+
+  <!-- NHÓM DỊCH -->
+
+  <section id="best-teams">
+    <div class="container">
+      <div class="inner-title font-bold text-text">
+        nhóm dịch hàng đầu
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home-1"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile-1"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact-1"
+                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home-1" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container">
+                <div class="inner-list">
+                  {% for x in list_top_nhomdich_tuan %}
+                  <div class="inner-content">
+                    <div class="inner-icon">
+                      ND
+                    </div>
+                    <div class="inner-desc">
+                      <a href="">
+                        {{x.ten}}
+                      </a>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{ forloop.counter }}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile-1" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <div class="container">
+                <div class="inner-list">
+                  {% for x in list_top_nhomdich_thang %}
+                  <div class="inner-content">
+                    <div class="inner-icon">
+                      ND
+                    </div>
+                    <div class="inner-desc">
+                      <a href="">
+                        {{x.ten}}
+                      </a>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{ forloop.counter }}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact-1" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div class="container">
+                <div class="inner-list">
+                  {% for x in list_top_nhomdich_moiluc %}
+                  <div class="inner-content">
+                    <div class="inner-icon">
+                      ND
+                    </div>
+                    <div class="inner-desc">
+                      <a href="">
+                        {{x.ten}}
+                      </a>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
+                    </div>
+                    <div class="inner-stt">
+                      0{{ forloop.counter }}
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END NHÓM DỊCH -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
+    <div class="container">
+      <div class="inner-text">
+        <div class="inner-contact">Link Github của nhóm 6:
+          <a href="github.com" target="_blank">github.com</a>
+        </div>
+        <div class="inner-contact">
+          Thành viên nhóm:
+        </div>
+        <div class="inner-member">B22DCCN261 - Hoàng Sơn Hải</div>
+        <div class="inner-member">B22DCKH131 - Hoàng Khánh Văn</div>
+        <div class="inner-member">B22DCKH129 - Nguyễn Hữu Trường</div>
+        <div class="inner-member">B22DCCN633 - Thái Hữu Phúc</div>
+        <div class="inner-member">B22DCCN371 - Trịnh Mạnh Hùng</div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- END FOOTER -->
+</main>
+<!-- giữ nguyên vị trí cuộn -->
+<script>
+  window.onbeforeunload = function () {
+    localStorage.setItem('scrollPosition', window.scrollY);  // Lưu vị trí cuộn vào localStorage
+  };
+
+  window.onload = function () {
+    if (localStorage.getItem('scrollPosition') !== null) {
+      window.scrollTo(0, localStorage.getItem('scrollPosition'));  // Cuộn lại vị trí đã lưu
+    }
+  };
+</script>
+{% endblock %}
