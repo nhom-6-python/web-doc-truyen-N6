@@ -150,10 +150,11 @@
 
 }
 
-.btn-primary {
-  color: #fff;
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / 54%);
+
+.doctruyen .btn a{
+  margin :7px 7px;
+  margin-left: 0px;
+  background-color: #0d6efd;
 }
 
 .set-image {
@@ -301,13 +302,13 @@
 }
 
 /* END CAROUSEL */
-/*main*/
+/*main*/ 
 .intro {
   margin-top: 45px;
   margin-bottom: 15px;
 }
-
-main {
+ 
+.doctruyen {
   margin-bottom: 100px;
 
 }
@@ -563,21 +564,17 @@ main {
   display: flex;
 }
 
-.allchuong .chuong .col-2 {
+.allchuong .chuong .chuongtrai {
   display: flex;
   justify-content: center;
   /* Căn giữa theo chiều ngang */
   align-items: center;
   /* Căn giữa theo chiều dọc */
   white-space: nowrap;
-
+  
 }
 
-.allchuong .noidungchuong {
-  padding-top: 15px;
-  color: #2f2d2d;
-  font-size: larger;
-}
+
 
 .allchuong .chuong {
   background-color: #f8f8f8;
@@ -585,18 +582,25 @@ main {
   border-radius: 5px;
   margin: 10px;
   color: rgb(71, 69, 69);
-  justify-content: center;
   line-height: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 13px;
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between; /* Căn đều hai phần tử */
 
+}
+.allchuong .chuong .chuongtrai .tenchuong{
+  margin-left: 15px;
 
 }
 
 
-.allchuong .noidungchuong p {
-  color: black;
+.allchuong .noidungchuong {
+  padding-top: 15px;
+  color: #2f2d2d;
+  font-size: 20px;
+  font-weight: 430;
 }
 
 .allchuong .chuong:hover {

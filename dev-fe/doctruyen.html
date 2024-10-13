@@ -1,71 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEB TRUYỆN SIU CẤP V.I.P</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="assets/js/javascrip.js"></script>
-  <meta name="theme-color" content="#7952b3">
-
-
-  <!-- css -->
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/doctruyen.css">
-  <link href="assets/css/style.scss" rel="stylesheet/scss" type="text/css">
-
-
-  <!-- font -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-
-  <!-- Custom styles for this template -->
-  <link href="assets/css/carousel.css" rel="stylesheet">
-
-
-</head>
+{% extends "index.html" %}
+{% block content %}
+{% load humanize %}
 
 <body>
-  <!-- NAVBAR -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Trang chủ</a>
+        <a class="navbar-brand" href="/home/">Trang chủ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
             <li class="nav-item">
               <a class="nav-link" href="suatruyen.html">Đăng truyện</a>
             </li>
@@ -76,24 +24,69 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <ul>
-                  <li><a class="dropdown-item" href="#">Truong lol</a></li>
-                  <li><a class="dropdown-item" href="#">Truong ngao</a></li>
-                  <li><a class="dropdown-item" href="#">Truong an cut</a></li>
-                  <li><a class="dropdown-item" href="#">Truong lmao</a></li>
-                  <li><a class="dropdown-item" href="#">Ngao da</a></li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Detective </a></li>
+                  <li><a class="dropdown-item" href="#">Huyền Huyễn</a></li>
+                  <li><a class="dropdown-item" href="#">Military</a></li>
+                  <li><a class="dropdown-item" href="#">Seinen</a></li>
+                  <li><a class="dropdown-item" href="#">Tragedy</a></li>
+
                 </ul>
                 <ul>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
+                  <li><a class="dropdown-item" href="#">Adventure</a></li>
+                  <li><a class="dropdown-item" href="#">Doujinshi</a></li>
+                  <li><a class="dropdown-item" href="#">Isekai</a></li>
+                  <li><a class="dropdown-item" href="#">Mistery</a></li>
+                  <li><a class="dropdown-item" href="#">Shoujo</a></li>
+                  <li><a class="dropdown-item" href="#">Trọng sinh</a></li>
+
                 </ul>
                 <ul>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
+                  <li><a class="dropdown-item" href="#">Anime</a></li>
+                  <li><a class="dropdown-item" href="#">Drama</a></li>
+                  <li><a class="dropdown-item" href="#">Josei</a></li>
+                  <li><a class="dropdown-item" href="#">Ngôn tình</a></li>
+                  <li><a class="dropdown-item" href="#">Shoujo Ai</a></li>
+                  <li><a class="dropdown-item" href="#">Truyện màu</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
+                  <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                  <li><a class="dropdown-item" href="#">Mafia</a></li>
+                  <li><a class="dropdown-item" href="#">One shot</a></li>
+                  <li><a class="dropdown-item" href="#">Shounen</a></li>
+                  <li><a class="dropdown-item" href="#">Webtoon</a></li>
+
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Cổ đại</a></li>
+                  <li><a class="dropdown-item" href="#">Gender Bender</a></li>
+                  <li><a class="dropdown-item" href="#">Magic</a></li>
+                  <li><a class="dropdown-item" href="#">Psychological</a></li>
+                  <li><a class="dropdown-item" href="#">Shounen Ai</a></li>
+                  <li><a class="dropdown-item" href="#">Xuyên không</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Comedy</a></li>
+                  <li><a class="dropdown-item" href="#">Harem</a></li>
+                  <li><a class="dropdown-item" href="#">Manhua</a></li>
+                  <li><a class="dropdown-item" href="#">Romance</a></li>
+                  <li><a class="dropdown-item" href="#">Slice of life</a></li>
+
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Comic</a></li>
+                  <li><a class="dropdown-item" href="#">Historical</a></li>
+                  <li><a class="dropdown-item" href="#">Manhwa</a></li>
+                  <li><a class="dropdown-item" href="#">School Life</a></li>
+                  <li><a class="dropdown-item" href="#">Sports</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Demons</a></li>
+                  <li><a class="dropdown-item" href="#">Horror</a></li>
+                  <li><a class="dropdown-item" href="#">Martial Arts</a></li>
+                  <li><a class="dropdown-item" href="#">Sci-fi</a></li>
+                  <li><a class="dropdown-item" href="#">Supernatural</a></li>
                 </ul>
               </div>
             </li>
@@ -105,6 +98,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+
           <a class="inner-sign" href="login.html">Đăng nhập</a>
         </div>
       </div>
@@ -113,14 +107,19 @@
   <!-- END NAVBAR -->
 
   <main>
-
+    <div class="doctruyen">
+      <div class="container">
     <div class="intro">
       <div class="container">
-        <div class="anhnen">
+        <div class="anhnen" style="background-image: url('{{truyen.anhnen.url}}');">
           <div class="row">
             <div class="col-12">
-              <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg" alt="anh1">
-              <h2>MADARA VS VANNGAO</h2>
+              <img src="{{truyen.anhbia.url}}" alt="anh1">
+              <h2>
+                <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
+                <br>
+                {{ truyen.ten }}
+              </h2>
             </div>
           </div>
         </div>
@@ -128,23 +127,37 @@
       <div class="container">
         <div class="info">
           <div class="desc">
-            <div class="detail">
-              <p>truyen ke ve cuoc chien nay lua tranh giay chuc vi hokage giua madara va vanngao tai lang laaaaaaa
-                aaaaaaaaa aaaaaaa aaaaaaa aaaaaa aaaaaaa aaa aaaa aaaaa aa aaaaaaaaaaaaaaaa a aaaaa aaaaa aaaaa aaa
-                aaaaaa
-                aaaa aaaa aaa aaa aaaaa aaaaaa aaa aaaa aaa aaa aaaa aaaaa a aaaa aaa aa aaa aaa aaa</p>
-
+            <div class="thoigian">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
+                viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+              </svg>
+              <span> 22 phút trước</span>
             </div>
-            <div class="btn">
-              <button type="button">Theo dõi truyện</button>
-              <a href="#"><button type="button">Đọc mới nhất</button></a>
-              <a href="#"><button type="button">Đọc gần nhất</button></a>
-              <a href="#"><button type="button">Đọc từ chương 1 </button></a>
+            <div class="cactheloai">
+              {% for x in list_the_loai %}
+              <a href="#">
+                <div class="theloai">
+                  <span style="font-weight: bold;">{{x}}</span>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+
+            <div class="btn" style="text-align: unset;">
+              <a href="#" class="btn btn-primary" >Thêm vào yêu
+                thích</a>
+              <a href="#" class="btn btn-primary" >Đọc chương mới
+                nhất</a>
+              <a href="#" class="btn btn-primary" >Đọc từ đầu</a>
+              <a href="#" class="btn btn-primary" >Đọc tiếp</a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="content">
       <div class="container">
@@ -155,400 +168,99 @@
                 <div>
                   <a class="user" href="#">
                     <div class="circle-icon">
-                      A
+                      ND
                     </div>
                     <div>
-                      <h6>EXITS IN THIS WORLD</h6>
-                      <p>13 Truyện</p>
+                      <h6>{{nhomdich.ten}}</h6>
+                      <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
                     </div>
                   </a>
                 </div>
               </div>
               <div class="row">
                 <div class="col-xs-12">
-                  <p>truyen ke ve cuoc chien nay lua tranh giay chuc vi hokage giua madara va vanngao tai lang truyen ke
-                    ve cuoc chien nay lua tranh giay chuc vi hokage giua madara va vanngao tai lang truyen ke ve cuoc
-                    chien nay lua tranh giay chuc vi hokage giua madara va vanngao tai lang truyen ke ve cuoc chien nay
-                    lua tranh giay chuc vi hokage giua madara va vanngao tai lang </p>
+                  <p>{{truyen.mota}} </p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 ">
                   <div class="trangchinhthuc">
-                    <h6>TRANG CHÍNH THỨC</h6>
-                    <a href="#">
-                      <p>vanngao.com</p>
-                    </a>
                     <h6>THÔNG TIN THÊM</h6>
-                    <p><span class="bold">6</span> chương đã đăng</p>
-                    <p><span class="bold">3.6K</span> lượt xem</p>
+                    <p><span class="bold">{{sochuong}}</span> chương đã đăng</p>
+                    <p><span class="bold">{{truyen.luotxem|intcomma}}</span> lượt xem</p>
                   </div>
-
                 </div>
-
               </div>
-
-
             </div>
 
             <br>
-            <div class="allchuong">
+            <div class="allchuong ">
+              {% for x in allchuong %}
               <a href="#">
                 <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
+                  <div class="chuongtrai">
+                    <div>
 
-                      <h4 class="tenchuong">Chương 1</h4>
+                      <h4 class="tenchuong">Chương {{x.stt}}</h4>
                     </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
+                    <div style="padding-left:15px;">
+                      <p class="noidungchuong">{{x.ten}}</p>
+                      <p>{{x.thoigiandang|naturaltime}}</p>
                     </div>
-                    <div class="col-1">
+                  </div>
+                    <div class="chuongphai">
                       <button class="circular-btn">
                         <i class="fa fa-download"></i>
                       </button>
                     </div>
-                  </div>
+                  
+                    
                 </div>
               </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="chuong">
-                  <div class="row">
-                    <div class="col-2">
-
-                      <h4 class="tenchuong">Chương 1</h4>
-                    </div>
-                    <div class="col-9">
-                      <p class="noidungchuong">Khởi đầu của Văn HIKI</p>
-                      <p>2 ngày trước - 0 lượt xem - 0 bình luận</p>
-                    </div>
-                    <div class="col-1">
-                      <button class="circular-btn">
-                        <i class="fa fa-download"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </a>
+              
+              {% endfor %}
             </div>
           </div>
-
           <div class="col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="dexuat">
               <div class="row">
                 <div>
                   <h6>CÙNG NHÓM DỊCH</h6>
+                  {% for x in truyen_cung_nhom_dich %}
                   <a href="#">
                     <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
+                      <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                       <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
+                        <div class="noidung" style="color:red">
+                          {{x.ten}}
                         </div>
                         <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
                         </div>
                       </div>
 
                     </div>
                   </a>
-                  <a href="#">
-                    <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
-                      <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
-                        </div>
-                        <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
-                      <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
-                        </div>
-                        <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </a>
-
+                  {% endfor %}
                   <h6>ĐỀ XUẤT</h6>
+                  {% for x in truyen_de_xuat %}
                   <a href="#">
                     <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
+                      <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                       <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
+                        <div class="noidung" style="color:red;">
+                          {{x.ten}}
                         </div>
                         <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
                         </div>
                       </div>
 
                     </div>
                   </a>
-                  <a href="#">
-                    <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
-                      <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
-                        </div>
-                        <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </a>
-                  <a href="#">
-                    <div class="truyendexuat">
-                      <img src="https://i.pinimg.com/236x/c0/a8/7e/c0a87e3668e8352ed1266aa28836677c.jpg"
-                        alt="Description of the image">
-                      <div class="detail">
-                        <div class="noidung">
-                          truyện kể về Văn hiki trong chuyến du đấu khốc liệt với madara
-                        </div>
-                        <div>
-                          <span class="sochuong">C.30</span>
-                          <span>-16 phút trước</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </a>
-
-
-
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -556,14 +268,17 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </main>
   <!-- FOOTER -->
   <footer class="footer">
+    <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
     <div class="container">
       <div class="inner-text">
         <div class="inner-contact">Link Github của nhóm 6:
-          <a href="https://github.com/nhom-6-python/btl-python-n6.git" target="_blank"> GitHub <i
-              class="fa-brands fa-github"></i></a>
+          <a href="github.com" target="_blank">github.com</a>
         </div>
         <div class="inner-contact">
           Thành viên nhóm:
@@ -587,4 +302,4 @@
 
 </body>
 
-</html>
+{% endblock %}
