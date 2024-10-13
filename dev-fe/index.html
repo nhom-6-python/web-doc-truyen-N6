@@ -31,7 +31,16 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+  <!-- js notification -->
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+    $(".notification_icon .fa-bell").click(function () {
+      $(".dropdown").toggleClass("active");
+    })
+    });
+  </script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -148,7 +157,26 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
-
+          <div class="notification_wrap">
+            <div class="notification_icon">
+              <i class="fa-regular fa-bell"></i>
+            </div>
+            <div class="dropdown">
+              <div class="notify_item">
+                <div class="notify_info">
+                  <a href="#" class="title-notification">thể loại thông báo</a>
+                  <p class="inner-desc">nội dung thông báo bao gồm </p>
+                </div>
+              </div>
+              <div class="notify_item">
+                <div class="notify_info">
+                  <a href="#" class="title-notification">thể loại thông báo</a>
+                  <p class="inner-desc">nội dung thông báo bao gồm </p>
+                </div>
+              </div>
+            </div>
+  
+          </div>
           <a class="inner-sign" href="login.html">Đăng nhập</a>
         </div>
       </div>
