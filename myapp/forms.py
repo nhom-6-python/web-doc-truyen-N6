@@ -25,3 +25,7 @@ class NguoidungForm(forms.ModelForm):
 	class Meta:
 		model = Nguoidung
 		fields =  ["ten", "matkhau", "vaitro"]
+
+
+
+

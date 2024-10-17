@@ -34,19 +34,25 @@ class Thongbao(models.Model):
 	noidung = models.CharField(max_length=255)
 
 class Nguoidung(models.Model):
-	ten = models.CharField(max_length=255)
-	matkhau = models.CharField(max_length=255)
-	vaitro = models.CharField(max_length=255)
-	yeuthich = models.ManyToManyField(Truyen, related_name='yeuthich', blank=True)
-	lichsu = models.ManyToManyField(Truyen, related_name='lichsu', blank=True)
-	thongbao = models.ManyToManyField(Thongbao, related_name='thongbao', blank=True)
-	truyendang = models.ManyToManyField(Truyen, related_name='truyendang', blank=True)
-	@property
-	def sotruyendadang(self):
-		cnt = 0
-		for x in self.truyendang.all():
-			cnt+=1
-		return cnt
-	@property
-	def luotxem(self):
-		return sum(x.luotxem for x in self.truyendang.all())
+
+    ten = models.CharField(max_length=255)
+    matkhau = models.CharField(max_length=255)
+    # Sử dụng choices đúng cấu trúc
+    vaitro = models.CharField(max_length=255)
+    
+    yeuthich = models.ManyToManyField(Truyen, related_name='yeuthich', blank=True)
+    lichsu = models.ManyToManyField(Truyen, related_name='lichsu', blank=True)
+    thongbao = models.ManyToManyField(Thongbao, related_name='thongbao', blank=True)
+    truyendang = models.ManyToManyField(Truyen, related_name='truyendang', blank=True)
+
+    @property
+    def sotruyendadang(self):
+        cnt = 0
+        for x in self.truyendang.all():
+            cnt += 1
+        return cnt
+
+    @property
+    def luotxem(self):
+        return sum(x.luotxem for x in self.truyendang.all())
+
