@@ -123,6 +123,9 @@ def doctruyen(request, id):
 	}
 	return render(request, 'doctruyen.html', context)
 
+def theloai(request, theloai): # tìm truyện theo thể loại
+	
+
 
 
 
