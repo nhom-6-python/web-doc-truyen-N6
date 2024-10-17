@@ -124,7 +124,16 @@ def doctruyen(request, id):
 	return render(request, 'doctruyen.html', context)
 
 def theloai(request, theloai): # tìm truyện theo thể loại
-	
+	truyens = Truyen.objects.all()
+	list_truyen_theo_the_loai = list()
+	for x in truyens:
+		if theloai in x.theloai:
+			list_truyen_theo_the_loai.append(x)
+	context = {
+		'theloai': theloai,
+		'list_truyen_theo_the_loai': list_truyen_theo_the_loai,
+	}
+	return render(request, 'truyentheotheloai.html', context)
 
 
 
