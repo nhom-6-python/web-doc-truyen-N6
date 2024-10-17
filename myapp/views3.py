@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm, LoginForm
+from .forms import NguoidungForm
 from .models import Nguoidung
 # Create your views here.
 
@@ -9,28 +9,34 @@ def index(request):
 
 def registerPage(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
+        form = NguoidungForm(request.POST)
+        ten = request.POST['ten']
+        mk = request.POST['matkhau']
+        nhaplaimk = request.POST['nhaplaimk']
+        nguoiDungList = Nguoidung.objects.values_list('ten', flat = True)
+        
+        if form.is_valid() and mk == nhaplaimk and ten not in nguoiDungList:
             form.save()
             return redirect('login')  # Chuyển hướng về login sau khi đăng ký thành công
-    else:
-        form = RegisterForm()
 
+    else:
+        form = NguoidungForm()
     return render(request, 'register.html', {'form': form})
 
 def loginPage(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
+        form = NguoidungForm(request.POST)
             # Lấy dữ liệu từ form
-            ten = form.cleaned_data.get('ten')
-            
-            # Lưu tên người dùng vào session để theo dõi trạng thái đăng nhập
+        ten = request.POST['ten']
+        matkhau = request.POST['matkhau']
+        nguoiDungList = Nguoidung.objects.values_list('ten', 'matkhau')
+        # Lưu tên người dùng vào session để theo dõi trạng thái đăng nhập
+        if (ten, matkhau) in nguoiDungList:
             request.session['nguoidung'] = ten
             
             return redirect('home')  # Chuyển hướng về trang chủ sau khi đăng nhập thành công
     else:
-        form = LoginForm()
+        form = NguoidungForm()
 
     return render(request, 'login.html', {'form': form})
 

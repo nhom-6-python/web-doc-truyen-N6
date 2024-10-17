@@ -34,16 +34,11 @@ class Thongbao(models.Model):
 	noidung = models.CharField(max_length=255)
 
 class Nguoidung(models.Model):
-    # List vai trò với cấu trúc tuple (giá trị, nhãn hiển thị)
-    VAITRO_CHOICES = [
-        ('POSTER', 'Poster'),
-        ('READER', 'Reader')
-    ]
-    
+
     ten = models.CharField(max_length=255)
     matkhau = models.CharField(max_length=255)
     # Sử dụng choices đúng cấu trúc
-    vaitro = models.CharField(max_length=255, choices=VAITRO_CHOICES)
+    vaitro = models.CharField(max_length=255)
     
     yeuthich = models.ManyToManyField(Truyen, related_name='yeuthich', blank=True)
     lichsu = models.ManyToManyField(Truyen, related_name='lichsu', blank=True)
