@@ -4,157 +4,159 @@
 {% bootstrap_javascript %}
 {% block content %}
 {% load humanize %}
-  <!-- NAVBAR -->
-  <header>
+<!-- NAVBAR -->
+<header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Trang chủ</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-              <a class="nav-link" href="suatruyen.html">Đăng truyện</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Thể loại
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <ul>
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Detective </a></li>
-                  <li><a class="dropdown-item" href="#">Huyền Huyễn</a></li>
-                  <li><a class="dropdown-item" href="#">Military</a></li>
-                  <li><a class="dropdown-item" href="#">Seinen</a></li>
-                  <li><a class="dropdown-item" href="#">Tragedy</a></li>
-
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Adventure</a></li>
-                  <li><a class="dropdown-item" href="#">Doujinshi</a></li>
-                  <li><a class="dropdown-item" href="#">Isekai</a></li>
-                  <li><a class="dropdown-item" href="#">Mistery</a></li>
-                  <li><a class="dropdown-item" href="#">Shoujo</a></li>
-                  <li><a class="dropdown-item" href="#">Trọng sinh</a></li>
-
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Anime</a></li>
-                  <li><a class="dropdown-item" href="#">Drama</a></li>
-                  <li><a class="dropdown-item" href="#">Josei</a></li>
-                  <li><a class="dropdown-item" href="#">Ngôn tình</a></li>
-                  <li><a class="dropdown-item" href="#">Shoujo Ai</a></li>
-                  <li><a class="dropdown-item" href="#">Truyện màu</a></li>
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
-                  <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                  <li><a class="dropdown-item" href="#">Mafia</a></li>
-                  <li><a class="dropdown-item" href="#">One shot</a></li>
-                  <li><a class="dropdown-item" href="#">Shounen</a></li>
-                  <li><a class="dropdown-item" href="#">Webtoon</a></li>
-
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Cổ đại</a></li>
-                  <li><a class="dropdown-item" href="#">Gender Bender</a></li>
-                  <li><a class="dropdown-item" href="#">Magic</a></li>
-                  <li><a class="dropdown-item" href="#">Psychological</a></li>
-                  <li><a class="dropdown-item" href="#">Shounen Ai</a></li>
-                  <li><a class="dropdown-item" href="#">Xuyên không</a></li>
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Comedy</a></li>
-                  <li><a class="dropdown-item" href="#">Harem</a></li>
-                  <li><a class="dropdown-item" href="#">Manhua</a></li>
-                  <li><a class="dropdown-item" href="#">Romance</a></li>
-                  <li><a class="dropdown-item" href="#">Slice of life</a></li>
-
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Comic</a></li>
-                  <li><a class="dropdown-item" href="#">Historical</a></li>
-                  <li><a class="dropdown-item" href="#">Manhwa</a></li>
-                  <li><a class="dropdown-item" href="#">School Life</a></li>
-                  <li><a class="dropdown-item" href="#">Sports</a></li>
-                </ul>
-                <ul>
-                  <li><a class="dropdown-item" href="#">Demons</a></li>
-                  <li><a class="dropdown-item" href="#">Horror</a></li>
-                  <li><a class="dropdown-item" href="#">Martial Arts</a></li>
-                  <li><a class="dropdown-item" href="#">Sci-fi</a></li>
-                  <li><a class="dropdown-item" href="#">Supernatural</a></li>
-                </ul>
-              </div>
-            </li>
-
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Nhập tên truyện..." aria-label="Search">
-            <button class="btn inner-button" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Trang chủ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
             </button>
-          </form>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-          <a class="inner-sign" href="login.html">Đăng nhập</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suatruyen.html">Đăng truyện</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Thể loại
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Detective </a></li>
+                                <li><a class="dropdown-item" href="#">Huyền Huyễn</a></li>
+                                <li><a class="dropdown-item" href="#">Military</a></li>
+                                <li><a class="dropdown-item" href="#">Seinen</a></li>
+                                <li><a class="dropdown-item" href="#">Tragedy</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Adventure</a></li>
+                                <li><a class="dropdown-item" href="#">Doujinshi</a></li>
+                                <li><a class="dropdown-item" href="#">Isekai</a></li>
+                                <li><a class="dropdown-item" href="#">Mistery</a></li>
+                                <li><a class="dropdown-item" href="#">Shoujo</a></li>
+                                <li><a class="dropdown-item" href="#">Trọng sinh</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Anime</a></li>
+                                <li><a class="dropdown-item" href="#">Drama</a></li>
+                                <li><a class="dropdown-item" href="#">Josei</a></li>
+                                <li><a class="dropdown-item" href="#">Ngôn tình</a></li>
+                                <li><a class="dropdown-item" href="#">Shoujo Ai</a></li>
+                                <li><a class="dropdown-item" href="#">Truyện màu</a></li>
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
+                                <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                                <li><a class="dropdown-item" href="#">Mafia</a></li>
+                                <li><a class="dropdown-item" href="#">One shot</a></li>
+                                <li><a class="dropdown-item" href="#">Shounen</a></li>
+                                <li><a class="dropdown-item" href="#">Webtoon</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Cổ đại</a></li>
+                                <li><a class="dropdown-item" href="#">Gender Bender</a></li>
+                                <li><a class="dropdown-item" href="#">Magic</a></li>
+                                <li><a class="dropdown-item" href="#">Psychological</a></li>
+                                <li><a class="dropdown-item" href="#">Shounen Ai</a></li>
+                                <li><a class="dropdown-item" href="#">Xuyên không</a></li>
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Comedy</a></li>
+                                <li><a class="dropdown-item" href="#">Harem</a></li>
+                                <li><a class="dropdown-item" href="#">Manhua</a></li>
+                                <li><a class="dropdown-item" href="#">Romance</a></li>
+                                <li><a class="dropdown-item" href="#">Slice of life</a></li>
+
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Comic</a></li>
+                                <li><a class="dropdown-item" href="#">Historical</a></li>
+                                <li><a class="dropdown-item" href="#">Manhwa</a></li>
+                                <li><a class="dropdown-item" href="#">School Life</a></li>
+                                <li><a class="dropdown-item" href="#">Sports</a></li>
+                            </ul>
+                            <ul>
+                                <li><a class="dropdown-item" href="#">Demons</a></li>
+                                <li><a class="dropdown-item" href="#">Horror</a></li>
+                                <li><a class="dropdown-item" href="#">Martial Arts</a></li>
+                                <li><a class="dropdown-item" href="#">Sci-fi</a></li>
+                                <li><a class="dropdown-item" href="#">Supernatural</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Nhập tên truyện..." aria-label="Search">
+                    <button class="btn inner-button" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <a class="inner-sign" href="login.html">Đăng nhập</a>
+            </div>
         </div>
-      </div>
     </nav>
-  </header>
-  <!-- END NAVBAR -->
+</header>
+<!-- END NAVBAR -->
 
-  <!-- MAIN -->
-  <main>
-      <section class="inner-login">
-          <div class="container-2">
-              <!-- REGISTER -->
-              <div class="registration form">
-                  <header>Đăng nhập</header>
-                  <form method="POST">
+<!-- MAIN -->
+<main>
+    <section class="inner-login">
+        <div class="container-2">
+            <!-- REGISTER -->
+            <div class="registration form">
+                <header>Đăng nhập</header>
+                <form method="POST">
                     {% csrf_token %}
-                      <input type="text" placeholder="Tên đăng nhập" name="ten">
-                      <input type="password" placeholder="Mật khẩu" name="matkhau">
-                      <a href="#">Quên mật khẩu?</a>
-                      <button type="submit" class="button">Đăng nhập</button>
-                  </form>
-                  <div class="signup">
-                      <span class="signup">Bạn chưa có tài khoản?
+                    <input type="text" placeholder="Tên đăng nhập" name="ten">
+                    <input type="password" placeholder="Mật khẩu" name="matkhau">
+                    <a href="#">Quên mật khẩu?</a>
+                    <button type="submit" class="button">Đăng nhập</button>
+                </form>
+                <div class="signup">
+                    <span class="signup">Bạn chưa có tài khoản?
                         <a class="label" href="register.html">Đăng ký</a>
-                      </span>
-                  </div>
-              </div>
-              <!-- END REGISTER -->
-          </div>
+                    </span>
+                </div>
+            </div>
+            <!-- END REGISTER -->
+        </div>
 
-      </section>
-  </main>
-  <!-- END MAIN -->
+    </section>
+</main>
+<!-- END MAIN -->
 
 
-   <!-- FOOTER -->
-  <footer class="footer">
+<!-- FOOTER -->
+<footer class="footer">
     <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
     <div class="container">
-      <div class="inner-text">
-        <div class="inner-contact">Link Github của nhóm 6:
-          <a href="https://github.com/nhom-6-python/btl-python-n6.git" target="_blank"> GitHub <i class="fa-brands fa-github"></i></a>
+        <div class="inner-text">
+            <div class="inner-contact">Link Github của nhóm 6:
+                <a href="https://github.com/nhom-6-python/btl-python-n6.git" target="_blank"> GitHub <i
+                        class="fa-brands fa-github"></i></a>
+            </div>
+            <div class="inner-contact">
+                Thành viên nhóm:
+            </div>
+            <div class="inner-member">B22DCCN261 - Hoàng Sơn Hải</div>
+            <div class="inner-member">B22DCKH131 - Hoàng Khánh Văn</div>
+            <div class="inner-member">B22DCKH129 - Nguyễn Hữu Trường</div>
+            <div class="inner-member">B22DCCN633 - Thái Hữu Phúc</div>
+            <div class="inner-member">B22DCCN371 - Trịnh Mạnh Hùng</div>
         </div>
-        <div class="inner-contact">
-          Thành viên nhóm:
-        </div>
-        <div class="inner-member">B22DCCN261 - Hoàng Sơn Hải</div>
-        <div class="inner-member">B22DCKH131 - Hoàng Khánh Văn</div>
-        <div class="inner-member">B22DCKH129 - Nguyễn Hữu Trường</div>
-        <div class="inner-member">B22DCCN633 - Thái Hữu Phúc</div>
-        <div class="inner-member">B22DCCN371 - Trịnh Mạnh Hùng</div>
-      </div>
     </div>
 
-  </footer>
-  <!-- END FOOTER -->
-  {% endblock %}
+</footer>
+<!-- END FOOTER -->
+{% endblock %}
