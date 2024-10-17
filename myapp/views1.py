@@ -111,7 +111,7 @@ def doctruyen(request, id):
 		sochuong+=1
 	truyen_cung_nhom_dich = nhomdich.truyendang.all()[:3]
 	truyen_de_xuat = top_view('tuan')[:3]
-	list_the_loai = truyen.theloai.split(',')
+	list_the_loai = truyen.theloai.split()
 	context = {
 		"truyen" : truyen,
 		'nhomdich' : nhomdich,

@@ -1,8 +1,10 @@
 {% extends "index.html" %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 {% block content %}
 {% load humanize %}
-
-
+<!-- NAVBAR -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <div class="container">
@@ -105,178 +107,47 @@
 </header>
 <!-- END NAVBAR -->
 
+<!-- MAIN -->
 <main>
+  <section class="inner-login">
+    <div class="container-2">
+      <!-- REGISTER -->
+      <div class="registration form">
+        <header>Đăng ký</header>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="text" placeholder="Tên đăng nhập" required name="ten">
+          <input type="password" placeholder="Mật khẩu" required name="matkhau">
+          <input type="password" placeholder="Nhập lại mật khẩu" required name="nhaplaimk">
 
-  <div class="intro">
-    <div class="container">
-      <div class="anhnen" style="background-image: url('{{truyen.anhnen.url}}');">
-        <div class="row">
-          <div class="col-12">
-            <img src="{{truyen.anhbia.url}}" alt="anh1">
-            <h2>
-              <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
-              <br>
-              {{ truyen.ten }}
-            </h2>
-          </div>
+          <select id="" name="vaitro">
+            <option value="" selected disabled hidden>Chọn một vai trò</option>
+            <option value="nguoidoc">Người đọc</option>
+            <option value="nhomdich">Nhóm dịch</option>
+          </select>
+          <button type="submit" class="button">Đăng ký</button>
+        </form>
+        <div class="signup">
+          <span class="signup">Đã có tài khoản?
+            <a class="label" href="login.html">Đăng nhập</a>
+          </span>
         </div>
       </div>
+      <!-- END REGISTER -->
     </div>
-    <div class="container">
-      <div class="info">
-        <div class="desc">
-          <div class="thoigian">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
-              viewBox="0 0 16 16">
-              <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
-            </svg>
-            <span> 22 phút trước</span>
-          </div>
-          <div class="cactheloai">
-            {% for x in list_the_loai %}
-            <a href="#">
-              <div class="theloai">
-                <span style="font-weight: bold;">{{x}}</span>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-
-          <div class="btn" style="text-align: unset;">
-            <a href="#" class="btn btn-primary">Thêm vào yêu
-              thích</a>
-            <a href="#" class="btn btn-primary">Đọc chương mới
-              nhất</a>
-            <a href="#" class="btn btn-primary">Đọc từ đầu</a>
-            <a href="#" class="btn btn-primary">Đọc tiếp</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="content">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-12">
-          <div class="thongtin">
-            <div class="row">
-              <div>
-                <a class="user" href="#">
-                  <div class="circle-icon">
-                    ND
-                  </div>
-                  <div>
-                    <h6>{{nhomdich.ten}}</h6>
-                    <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <p>{{truyen.mota}} </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12 ">
-                <div class="trangchinhthuc">
-                  <h6>THÔNG TIN THÊM</h6>
-                  <p><span class="bold">{{sochuong}}</span> chương đã đăng</p>
-                  <p><span class="bold">{{truyen.luotxem|intcomma}}</span> lượt xem</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <br>
-          <div class="allchuong">
-            {% for x in allchuong %}
-            <a href="#">
-              <div class="chuong">
-                <div class="row">
-                  <div class="col-2">
-
-                    <h4 class="tenchuong">Chương {{x.stt}}</h4>
-                  </div>
-                  <div class="col-9">
-                    <p class="noidungchuong">{{x.ten}}</p>
-                    <p>{{x.thoigiandang|naturaltime}}</p>
-                  </div>
-                  <div class="col-1">
-                    <button class="circular-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-
-
-
-
-        <div class="col-lg-3 col-md-12 col-sm-12 col-12">
-          <div class="dexuat">
-            <div class="row">
-              <div>
-                <h6>CÙNG NHÓM DỊCH</h6>
-                {% for x in truyen_cung_nhom_dich %}
-                <a href="#">
-                  <div class="truyendexuat">
-                    <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                    <div class="detail">
-                      <div class="noidung" style="color:red">
-                        {{x.ten}}
-                      </div>
-                      <div>
-                        <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
-                        <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </a>
-                {% endfor %}
-                <h6>ĐỀ XUẤT</h6>
-                {% for x in truyen_de_xuat %}
-                <a href="#">
-                  <div class="truyendexuat">
-                    <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                    <div class="detail">
-                      <div class="noidung" style="color:red;">
-                        {{x.ten}}
-                      </div>
-                      <div>
-                        <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
-                        <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </a>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+  </section>
 </main>
+<!-- END MAIN -->
+
+
 <!-- FOOTER -->
 <footer class="footer">
   <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
   <div class="container">
     <div class="inner-text">
       <div class="inner-contact">Link Github của nhóm 6:
-        <a href="github.com" target="_blank">github.com</a>
+        <a href="https://github.com/nhom-6-python/btl-python-n6.git" target="_blank"> GitHub <i
+            class="fa-brands fa-github"></i></a>
       </div>
       <div class="inner-contact">
         Thành viên nhóm:
@@ -291,10 +162,4 @@
 
 </footer>
 <!-- END FOOTER -->
-
-
-<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
 {% endblock %}
