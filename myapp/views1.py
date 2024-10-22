@@ -111,7 +111,7 @@ def doctruyen(request, id):
 		sochuong+=1
 	truyen_cung_nhom_dich = nhomdich.truyendang.all()[:3]
 	truyen_de_xuat = top_view('tuan')[:3]
-	list_the_loai = truyen.theloai.split()
+	list_the_loai = truyen.theloai.split(",")
 	context = {
 		"truyen" : truyen,
 		'nhomdich' : nhomdich,
@@ -124,7 +124,16 @@ def doctruyen(request, id):
 	return render(request, 'doctruyen.html', context)
 
 def theloai(request, theloai): # tìm truyện theo thể loại
-	return render(request, )
+	truyens = Truyen.objects.all()
+	truyens_theo_the_loai = list()
+	for x in truyens:
+		if theloai in x.theloai:
+			truyens_theo_the_loai.append(x)
+	context={
+		'theloai': theloai,
+		'truyens_theo_the_loai': truyens_theo_the_loai,
+	}
+	return render(request, 'theloai.html', context)
 	
 
 
