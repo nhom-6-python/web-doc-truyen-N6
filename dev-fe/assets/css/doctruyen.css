@@ -150,10 +150,11 @@
 
 }
 
-.btn-primary {
-  color: #fff;
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / 54%);
+
+.doctruyen .btn a{
+  margin :7px 7px;
+  margin-left: 0px;
+  background-color: #0d6efd;
 }
 
 .set-image {
@@ -301,14 +302,15 @@
 }
 
 /* END CAROUSEL */
-/*main*/
+/*main*/ 
 .intro {
   margin-top: 45px;
   margin-bottom: 15px;
 }
-
-main {
+ 
+.doctruyen {
   margin-bottom: 100px;
+
 }
 
 .intro .anhnen {
@@ -379,7 +381,7 @@ main {
   background-color: #EDEEF2;
   margin-bottom: -30px;
   padding: 5px;
- 
+
 
 }
 
@@ -420,24 +422,25 @@ main {
   position: absolute;
   width: 220px;
   height: 330px;
-  top:400px;
+  top: 400px;
   left: 50px;
   border-radius: 10px;
-  z-index:1;
+  z-index: 1;
 }
 
 .intro .info .desc {
   padding-bottom: 30px;
   margin-left: 300px;
 }
-.intro .info .desc .detail{
+
+.intro .info .desc .detail {
   min-height: 170px;
   font-size: large;
 }
 
 .intro .info .desc button {
   background-color: blue;
- 
+
   border: none;
   color: white;
   padding: 10px 20px;
@@ -448,10 +451,11 @@ main {
   margin: 5px 15px;
   cursor: pointer;
   border-radius: 5px;
-  width: 160px;
+  width: 200px;
   height: 40px;
-  
+
 }
+
 .intro .info .desc button:hover {
   background-color: rgb(21, 21, 175);
   border: none;
@@ -464,13 +468,31 @@ main {
   margin: 5px 15px;
   cursor: pointer;
   border-radius: 5px;
-  width: 160px;
+  width: 200px;
   height: 40px;
-  
+
+}
+
+
+.intro .info .desc .cactheloai .theloai {
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 2px 5px;
+  margin: 5px;
+  color: #4b4a4a;
+  display: inline-block;
+}
+
+.intro .info .desc .cactheloai .theloai .number {
+  border-radius: 20px;
+  background-color: #ded7d7;
+  padding: 3px;
+  font-size: small;
 }
 
 .body {
   background-color: #d1d5db;
+
 
 }
 
@@ -491,7 +513,7 @@ main {
   align-items: center;
   padding: 0px;
   width: 100%;
- 
+
 
 }
 
@@ -507,22 +529,25 @@ main {
 }
 
 .dexuat .truyendexuat {
-  margin-left:0px;
+  margin-left: 0px;
   color: rgb(0, 0, 0);
   padding-bottom: 30px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
 
 }
-.dexuat .truyendexuat .sochuong{
+
+.dexuat .truyendexuat .sochuong {
   font-weight: bold;
   color: #615f5f;
 }
-.dexuat .truyendexuat .noidung{
+
+.dexuat .truyendexuat .noidung {
   font-weight: bold;
   color: #302f2f;
 }
-.dexuat .truyendexuat .detail{
+
+.dexuat .truyendexuat .detail {
   margin-left: 15px;
 }
 
@@ -532,12 +557,14 @@ main {
   height: 800px;
   overflow: auto;
   background-color: #EDEEF2;
-  
+
 }
-.content .user{
+
+.content .user {
   display: flex;
 }
-.allchuong .chuong .col-2 {
+
+.allchuong .chuong .chuongtrai {
   display: flex;
   justify-content: center;
   /* Căn giữa theo chiều ngang */
@@ -547,11 +574,7 @@ main {
   
 }
 
-.allchuong .noidungchuong {
-  padding-top: 15px;
-  color: #2f2d2d;
-  font-size: larger;
-}  
+
 
 .allchuong .chuong {
   background-color: #f8f8f8;
@@ -559,18 +582,25 @@ main {
   border-radius: 5px;
   margin: 10px;
   color: rgb(71, 69, 69);
-  justify-content: center;
   line-height: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 13px;
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between; /* Căn đều hai phần tử */
 
+}
+.allchuong .chuong .chuongtrai .tenchuong{
+  margin-left: 15px;
 
 }
 
 
-.allchuong .noidungchuong p {
-  color: black;
+.allchuong .noidungchuong {
+  padding-top: 15px;
+  color: #2f2d2d;
+  font-size: 20px;
+  font-weight: 430;
 }
 
 .allchuong .chuong:hover {
@@ -588,7 +618,7 @@ main {
   background-color: #e5e7eb;
   padding: 10px;
   margin-left: 0;
-  
+
 }
 
 .circular-btn {
@@ -604,6 +634,10 @@ main {
   align-items: center;
   font-size: 15px;
   cursor: pointer;
+}
+
+body {
+  padding-top: 20px;
 }
 
 /* FOOTER */

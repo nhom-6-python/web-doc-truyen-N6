@@ -1,123 +1,3 @@
-/* NAV */
-.navbar-brand {
-  color: black;
-}
-
-.navbar-toggler {
-  color: #0000007d;
-
-}
-
-.navbar-toggler i {
-  font-size: 20px;
-}
-
-.dropdown-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dropdown-menu li .dropdown-item {
-  color: gray;
-  font-size: 1em;
-  padding: 0.5em 1em;
-}
-
-.dropdown-menu {
-  border: none;
-  border-radius: 0;
-  padding: 0.7em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-
-.dropdown-menu.show {
-  display: flex;
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-
-  .dropdown-menu.show {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .dropdown-menu.show {
-    flex-wrap: wrap;
-    max-height: 350px;
-    overflow-y: scroll;
-  }
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1140px) {
-  .dropdown:hover .dropdown-menu {
-    width: 40vw;
-    flex-wrap: wrap;
-  }
-
-}
-
-/* thong bao */
-
-/* end thong bao */
-
-
-
-/* SEARCH */
-.d-flex {
-  height: 2rem;
-  align-items: center;
-}
-
-.d-flex .inner-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-  --tw-bg-opacity: 0.1;
-  --tw-text-opacity: 0.7;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.d-flex .inner-button:hover {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-  --tw-bg-opacity: 0.1;
-  --tw-text-opacity: 0.7;
-  background-color: rgb(154, 150, 150);
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-
-}
-
-.d-flex .inner-button i {
-  margin: -3px;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-  --tw-text-opacity: 0.7;
-  font-size: 10px;
-
-}
-
-/* END SEARCH */
-
 
 .bg-dark {
   background-color: #edeef0 !important;
@@ -150,10 +30,11 @@
 
 }
 
-.btn-primary {
-  color: #fff;
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / 54%);
+
+.doctruyen .btn a{
+  margin :7px 7px;
+  margin-left: 0px;
+  background-color: #0d6efd;
 }
 
 .set-image {
@@ -301,13 +182,13 @@
 }
 
 /* END CAROUSEL */
-/*main*/
+/*main*/ 
 .intro {
   margin-top: 45px;
   margin-bottom: 15px;
 }
-
-main {
+ 
+.doctruyen {
   margin-bottom: 100px;
 
 }
@@ -563,21 +444,17 @@ main {
   display: flex;
 }
 
-.allchuong .chuong .col-2 {
+.allchuong .chuong .chuongtrai {
   display: flex;
   justify-content: center;
   /* Căn giữa theo chiều ngang */
   align-items: center;
   /* Căn giữa theo chiều dọc */
   white-space: nowrap;
-
+  
 }
 
-.allchuong .noidungchuong {
-  padding-top: 15px;
-  color: #2f2d2d;
-  font-size: larger;
-}
+
 
 .allchuong .chuong {
   background-color: #f8f8f8;
@@ -585,18 +462,25 @@ main {
   border-radius: 5px;
   margin: 10px;
   color: rgb(71, 69, 69);
-  justify-content: center;
   line-height: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 13px;
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between; /* Căn đều hai phần tử */
 
+}
+.allchuong .chuong .chuongtrai .tenchuong{
+  margin-left: 15px;
 
 }
 
 
-.allchuong .noidungchuong p {
-  color: black;
+.allchuong .noidungchuong {
+  padding-top: 15px;
+  color: #2f2d2d;
+  font-size: 20px;
+  font-weight: 430;
 }
 
 .allchuong .chuong:hover {

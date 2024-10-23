@@ -21,7 +21,7 @@
   color: gray;
   font-size: 1em;
   padding: 0.5em 1em;
-}
+} 
 
 .dropdown-menu {
   border: none;
@@ -309,11 +309,8 @@
 
 }
 
-.chevron-left {
-
-  margin-top: 1000px;
-  padding: 0;
-  color: rgba(79, 73, 73, 0.959);
+.trencung .tieude{
+  padding-left: 20px;
 }
 
 .trencung .row .col-1 {
@@ -412,10 +409,11 @@
 
 }
 
-.chinhsua .col-6 h5 {
-  position: absolute;
-  left: 270px;
-
+.suatruyen .chitiettruyen{
+  text-align: center;
+}
+.suatruyen .chitiettruyen h5{
+  display: inline-block;
 }
 
 .chinhsua .col-6 .content {
@@ -479,15 +477,16 @@
   justify-content: space-between;
   position: relative;
 }
-
+.trencung .container .left{
+  display: flex;
+}
 .chevron-left {
 
   margin-top: 0px;
   padding: 0;
   color: rgba(79, 73, 73, 0.959);
-  position: absolute;
-  left: -10px;
-  top: 15px;
+ 
+  
 }
 
 
@@ -555,11 +554,7 @@
 
 }
 
-.chinhsua .col-lg-6 h5 {
-  position: absolute;
-  left: 270px;
 
-}
 
 .chinhsua .col-lg-6 .content {
   margin-top: 30px;
@@ -611,7 +606,7 @@
 
 
 /* FOOTER */
-main {
+.suatruyen {
   margin-top: 80px;
   margin-bottom: 100px;
 }

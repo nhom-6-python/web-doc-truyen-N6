@@ -12,11 +12,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Trang chủ</title>
 	<link rel="stylesheet" href="{% static 'base.css' %}">
+	<link rel="stylesheet" href="{% static 'reset.css' %}">
 	<link rel="stylesheet" href="{% static 'carousel.css' %}">
 	<link rel="stylesheet" href="{% static 'dangtheodoi.css' %}">
 	<link rel="stylesheet" href="{% static 'doctruyen.css' %}">
 	<link rel="stylesheet" href="{% static 'login.css' %}">
-	<link rel="stylesheet" href="{% static 'reset.css' %}">
 	<link rel="stylesheet" href="{% static 'suatruyen.css' %}">
 	<link rel="stylesheet" href="{% static 'style.css' %}">
 
@@ -25,6 +25,15 @@
 		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+		$(".notification_icon .fa-bell").click(function () {
+			$(".dropdown").toggleClass("active");
+		})
+		});
+	</script>
 </head>
 
 <body>
