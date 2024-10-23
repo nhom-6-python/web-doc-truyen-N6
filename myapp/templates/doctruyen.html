@@ -95,19 +95,13 @@
             {% for x in allchuong %}
             <a href="#">
               <div class="chuong">
-                <div class="row">
-                  <div class="col-2">
-
-                    <h4 class="tenchuong">Chương {{x.stt}}</h4>
+                <div class="row" style="width: 100%;">
+                  <div class="col-3" style="width: fit-content;">
+                    <h4 class="tenchuong" style="line-height: 67px; margin-bottom: 0;">Chương {{x.stt}}</h4>
                   </div>
                   <div class="col-9">
                     <p class="noidungchuong">{{x.ten}}</p>
-                    <p>{{x.thoigiandang|naturaltime}}</p>
-                  </div>
-                  <div class="col-1">
-                    <button class="circular-btn">
-                      <i class="fa fa-download"></i>
-                    </button>
+                    <p>{{x.thoigiandang|naturaltime}} - {{x.luotxem|intcomma}} lượt xem</p>
                   </div>
                 </div>
               </div>
