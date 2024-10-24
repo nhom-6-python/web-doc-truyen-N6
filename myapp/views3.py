@@ -43,3 +43,24 @@ def loginPage(request):
 def dang_xuat(request):
     request.session.flush()  # Xóa tất cả session
     return redirect('home')
+
+def get_truyen_yeuthich(request):
+    # Lấy tên người dùng từ session
+    ten_nguoidung = request.session.get('nguoidung', None)  # Kiểm tra session có chứa 'nguoidung'
+    if ten_nguoidung:
+        try:
+            # Tìm đối tượng người dùng dựa trên tên
+            nguoidung = Nguoidung.objects.get(ten=ten_nguoidung)
+            # Lấy danh sách truyện yêu thích
+            truyen_yeuthich = nguoidung.yeuthich.all()
+            # Trả về kết quả hiển thị
+            context = {'truyen_yeuthich': truyen_yeuthich}
+            return render(request, 'theodoi.html', context)
+        
+        except Nguoidung.DoesNotExist:
+            return redirect('login')  
+    else:
+        return redirect('login')
+
+
+
