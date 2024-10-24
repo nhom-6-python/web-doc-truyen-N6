@@ -12,7 +12,7 @@ class TrangAdmin(admin.ModelAdmin):
 	list_display = ('id', 'anh', 'chap')
 
 class ThongbaoAdmin(admin.ModelAdmin):
-	list_display = ('id','noidung')
+	list_display = ('id','theloai','noidung')
 
 class NguoidungAdmin(admin.ModelAdmin):
 	list_display = ('id','ten', 'matkhau', 'vaitro', 'luotxem')

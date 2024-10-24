@@ -11,7 +11,7 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 					<li class="nav-item">
-						<a class="nav-link" href="suatruyen.html">Đăng truyện</a>
+						<a class="nav-link" href="suatruyen.htmpyl">Đăng truyện</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -98,20 +98,16 @@
 						<i class="fa-regular fa-bell"></i>
 					</div>
 					<div class="dropdown">
+						{% for x in list_thong_baos %}
 						<div class="notify_item">
 							<div class="notify_info">
-								<a href="#">thể loại thông báo</a>
-								<p>nội dung thông báo</p>
+								<a href="#">{{ x.theloai}}</a>
+								<p>{{ x.noidung }}</p>
 							</div>
 						</div>
-						<div class="notify_item">
-							<div class="notify_info">
-								<p>Name<span>Chương</span></p>
-								<span class="notify_time">time</span>
-							</div>
-						</div>
+						{% endfor %}
+						
 					</div>
-
 				</div>
 				<a class="inner-sign" href="login.html">Đăng nhập</a>
 			</div>

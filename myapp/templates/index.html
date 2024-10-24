@@ -29,15 +29,15 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
 		$(document).ready(function () {
-		$(".notification_icon .fa-bell").click(function () {
-			$(".dropdown").toggleClass("active");
-		})
+			$(".notification_icon .fa-bell").click(function () {
+				$(".dropdown").toggleClass("active");
+			})
 		});
 	</script>
 </head>
 
 <body>
-	{% include 'navbar.html' %}
+	{% include "navbar.html" %}
 	{% block content %}
 	{%endblock %}
 </body>
