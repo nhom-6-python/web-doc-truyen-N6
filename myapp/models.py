@@ -31,6 +31,7 @@ class Trang(models.Model):
 	chap = models.ForeignKey(Chap, on_delete=models.CASCADE, related_name='chap')
 
 class Thongbao(models.Model):
+	theloai = models.CharField(max_length=255, default="Thông báo mới!!")
 	noidung = models.CharField(max_length=255)
 
 class Nguoidung(models.Model):
