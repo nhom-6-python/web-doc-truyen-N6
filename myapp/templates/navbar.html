@@ -98,34 +98,15 @@
 						<i class="fa-regular fa-bell"></i>
 					</div>
 					<div class="dropdown">
+						{% for x in list_thong_baos %}
 						<div class="notify_item">
 							<div class="notify_info">
-								<a href="#">thể loại thông báo</a>
-								<p>nội dung thông báo nội dung thông báo nội dung thông báo nội dung thông báo nội dung
-									thông báo</p>
+								<a href="#">{{ x.theloai}}</a>
+								<p>{{ x.noidung }}</p>
 							</div>
 						</div>
-						<div class="notify_item">
-							<div class="notify_info">
-								<a href="#">thể loại thông báo</a>
-								<p>nội dung thông báo nội dung thông báo nội dung thông báo nội dung thông báo nội dung
-									thông báo</p>
-							</div>
-						</div>
-						<div class="notify_item">
-							<div class="notify_info">
-								<a href="#">thể loại thông báo</a>
-								<p>nội dung thông báo nội dung thông báo nội dung thông báo nội dung thông báo nội dung
-									thông báo</p>
-							</div>
-						</div>
-						<div class="notify_item">
-							<div class="notify_info">
-								<a href="#">thể loại thông báo</a>
-								<p>nội dung thông báo nội dung thông báo nội dung thông báo nội dung thông báo nội dung
-									thông báo</p>
-							</div>
-						</div>
+						{% endfor %}
+
 					</div>
 				</div>
 				<a class="inner-sign" href="login.html">Đăng nhập</a>

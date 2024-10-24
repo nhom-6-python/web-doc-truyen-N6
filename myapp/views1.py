@@ -76,6 +76,19 @@ def top_nhomdich(time):
 			.order_by('-total_views')[:5]
 		)
 		return top_nhomdich
+	
+	#code t lm
+def list_thong_bao(request):
+    ten_nguoi_dung=request.session.get('nguoidung',None)
+    nguoidung=Nguoidung()
+    nguoi_dungs= Nguoidung.objects.all()
+    for x in nguoi_dungs:
+        if x.ten==ten_nguoi_dung:
+            nguoidung=x
+    print(nguoidung)
+    return nguoidung.thongbao.all()
+        
+
 
 def home(request): # view trang home
 	top3 = top3_by_like()
@@ -88,6 +101,7 @@ def home(request): # view trang home
 	list_top_nhomdich_tuan = top_nhomdich('tuan')
 	list_top_nhomdich_thang = top_nhomdich('thang')
 	list_top_nhomdich_moiluc = top_nhomdich('moiluc')
+	list_thong_baos = list_thong_bao(request)
 	context = {
 		'top3' : top3,
 		'list_new_update': list_new_update,
@@ -99,7 +113,9 @@ def home(request): # view trang home
 		'list_top_nhomdich_tuan' : list_top_nhomdich_tuan,
 		'list_top_nhomdich_thang' : list_top_nhomdich_thang,
 		'list_top_nhomdich_moiluc' : list_top_nhomdich_moiluc,
+		'list_thong_baos' : list_thong_baos,
 	}
+	
 	return render(request, 'home.html', context)
 
 def doctruyen(request, id):
