@@ -1,6 +1,9 @@
+#Hung
 from django.shortcuts import render, redirect
 from .forms import NguoidungForm
 from .models import Nguoidung
+from .views2 import list_thong_bao
+
 # Create your views here.
 
 def index(request):
@@ -54,7 +57,11 @@ def get_truyen_yeuthich(request):
             # Lấy danh sách truyện yêu thích
             truyen_yeuthich = nguoidung.yeuthich.all()
             # Trả về kết quả hiển thị
-            context = {'truyen_yeuthich': truyen_yeuthich}
+            list_thong_baos = list_thong_bao(request)
+            context = {
+                'truyen_yeuthich': truyen_yeuthich,
+                'list_thong_baos': list_thong_baos,
+            }
             return render(request, 'theodoi.html', context)
         
         except Nguoidung.DoesNotExist:

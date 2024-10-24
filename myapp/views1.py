@@ -1,3 +1,4 @@
+#Hai
 from django.shortcuts import render, redirect
 from .models import Truyen, Chap, Trang, Thongbao, Nguoidung
 from .forms import TruyenForm
@@ -6,6 +7,8 @@ from django.utils.timezone import make_aware
 from django.utils import timezone
 from django.db.models import Sum,Q, Value
 from django.db.models.functions import Coalesce
+from .views2 import list_thong_bao
+
 # Create your views here.
 
 # chức năng trang home
@@ -118,7 +121,7 @@ def home(request): # view trang home
 	
 	return render(request, 'home.html', context)
 
-def doctruyen(request, id):
+def doctruyen(request, id): #view phan mota truyen
 	truyen = Truyen.objects.get(id=id)
 	nhomdich = Nguoidung.objects.get(truyendang=truyen)
 	sochuong = 0
@@ -128,6 +131,7 @@ def doctruyen(request, id):
 	truyen_cung_nhom_dich = nhomdich.truyendang.all()[:3]
 	truyen_de_xuat = top_view('tuan')[:3]
 	list_the_loai = truyen.theloai.split(",")
+	list_thong_baos = list_thong_bao(request)
 	context = {
 		"truyen" : truyen,
 		'nhomdich' : nhomdich,
@@ -136,6 +140,7 @@ def doctruyen(request, id):
 		'truyen_cung_nhom_dich': truyen_cung_nhom_dich,
 		'truyen_de_xuat' : truyen_de_xuat,
 		'list_the_loai' : list_the_loai,
+		'list_thong_baos' : list_thong_baos,
 	}
 	return render(request, 'doctruyen.html', context)
 
@@ -145,9 +150,11 @@ def theloai(request, theloai): # tìm truyện theo thể loại
 	for x in truyens:
 		if theloai in x.theloai:
 			truyens_theo_the_loai.append(x)
+	list_thong_baos = list_thong_bao(request)
 	context={
 		'theloai': theloai,
 		'truyens_theo_the_loai': truyens_theo_the_loai,
+		'list_thong_baos' : list_thong_baos,
 	}
 	return render(request, 'theloai.html', context)
 	
