@@ -1,58 +1,58 @@
-# Web Đọc Truyện Tranh
+# Online Comic Reading Platform
 
-Ứng dụng web đọc truyện tranh trực tuyến được xây dựng bằng Django Framework.
+A web application for reading comics online built with Django Framework.
 
-## Tính năng
+## Features
 
-- Đọc truyện tranh trực tuyến với giao diện thân thiện
-- Quản lý truyện, chương và trang truyện
-- Hệ thống người dùng với các vai trò khác nhau
-- Theo dõi lịch sử đọc truyện
-- Yêu thích truyện
-- Thống kê lượt xem
-- Upload và quản lý truyện (dành cho người đăng truyện)
-- Hệ thống thông báo
+- Read comics online with user-friendly interface
+- Manage series, chapters, and pages
+- User system with role-based access control
+- Reading history tracking
+- Favorite series management
+- View count statistics
+- Upload and manage comics (for content uploaders)
+- Notification system
 
-## Công nghệ sử dụng
+## Tech Stack
 
 - **Backend**: Django 4.2.7
-- **Database**: SQLite (có thể chuyển sang MySQL/PostgreSQL)
+- **Database**: SQLite (MySQL/PostgreSQL support)
 - **Frontend**: HTML, CSS, JavaScript
 - **UI Framework**: Bootstrap 5
 - **Image Processing**: Pillow
 - **Server**: Gunicorn (production)
 
-## Cấu trúc dự án
+## Project Structure
 
 ```
 .
-├── myapp/              # Ứng dụng chính
+├── myapp/              # Main application
 │   ├── models.py       # Models: Truyen, Chap, Trang, Nguoidung, Thongbao
-│   ├── views.py        # Views xử lý logic
-│   ├── forms.py        # Forms cho các model
+│   ├── views.py        # Views handling logic
+│   ├── forms.py        # Forms for models
 │   ├── templates/      # HTML templates
 │   └── static/         # CSS, JS, images
-├── myweb/              # Cấu hình Django project
-│   ├── settings.py     # Cấu hình chính
+├── myweb/              # Django project configuration
+│   ├── settings.py     # Main settings
 │   └── urls.py         # URL routing
-├── media/              # Thư mục lưu trữ ảnh upload
-│   ├── anhbia/         # Ảnh bìa truyện
-│   ├── anhnen/         # Ảnh nền truyện
-│   └── anhchap/        # Ảnh các trang truyện
+├── media/              # Uploaded images storage
+│   ├── anhbia/         # Comic cover images
+│   ├── anhnen/         # Background images
+│   └── anhchap/        # Chapter page images
 ├── dev-fe/             # Frontend development files
 ├── db.sqlite3          # Database
 ├── manage.py           # Django management script
 └── requirements.txt    # Python dependencies
 ```
 
-## Cài đặt
+## Installation
 
-### Yêu cầu hệ thống
+### System Requirements
 
 - Python 3.8+
 - pip
 
-### Các bước cài đặt
+### Setup Steps
 
 1. Clone repository:
 ```bash
@@ -60,88 +60,88 @@ git clone <repository-url>
 cd <project-folder>
 ```
 
-2. Tạo và kích hoạt môi trường ảo (khuyến nghị):
+2. Create and activate virtual environment (recommended):
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# hoặc
+# or
 venv\Scripts\activate  # Windows
 ```
 
-3. Cài đặt dependencies:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Chạy migrations:
+4. Run migrations:
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-5. Tạo superuser (admin):
+5. Create superuser (admin):
 ```bash
 python manage.py createsuperuser
 ```
 
-6. Chạy development server:
+6. Run development server:
 ```bash
 python manage.py runserver
 ```
 
-7. Truy cập ứng dụng:
+7. Access the application:
 - Website: http://localhost:8000
 - Admin panel: http://localhost:8000/admin
 
-## Models
+## Database Models
 
-### Truyen (Truyện)
-- Tên truyện, thể loại, mô tả, tác giả
-- Ảnh bìa và ảnh nền
-- Lượt thích, lượt xem (tính từ tổng lượt xem các chap)
+### Truyen (Series)
+- Series name, genre, description, author
+- Cover image and background image
+- Like count, view count (calculated from total chapter views)
 
-### Chap (Chương)
-- Số thứ tự, tên chương
-- Lượt xem, thời gian đăng
-- Liên kết với Truyen
+### Chap (Chapter)
+- Chapter number, chapter name
+- View count, publish date
+- Foreign key to Truyen
 
-### Trang
-- Ảnh trang truyện
-- Liên kết với Chap
+### Trang (Page)
+- Page image
+- Foreign key to Chap
 
-### Nguoidung (Người dùng)
-- Tên, mật khẩu, vai trò
-- Danh sách yêu thích, lịch sử đọc
-- Truyện đã đăng, thông báo
+### Nguoidung (User)
+- Username, password, role
+- Favorites list, reading history
+- Uploaded series, notifications
 
-### Thongbao (Thông báo)
-- Nội dung thông báo
+### Thongbao (Notification)
+- Notification content
 
-## Sử dụng
+## Usage
 
-### Đọc truyện
-- Truy cập trang chủ để xem danh sách truyện
-- Click vào truyện để xem chi tiết và danh sách chương
-- Chọn chương để đọc
+### Reading Comics
+- Access homepage to browse comic series
+- Click on a series to view details and chapter list
+- Select a chapter to start reading
 
-### Quản lý truyện (Admin/Uploader)
-- Đăng nhập với tài khoản có quyền
-- Upload truyện mới với ảnh bìa và ảnh nền
-- Thêm chương và upload ảnh các trang
+### Managing Content (Admin/Uploader)
+- Login with authorized account
+- Upload new series with cover and background images
+- Add chapters and upload page images
 
 ### Admin Panel
-- Quản lý toàn bộ dữ liệu: truyện, chương, người dùng
-- Xem thống kê lượt xem
-- Quản lý thông báo
+- Manage all data: series, chapters, users
+- View statistics and analytics
+- Manage notifications
 
 ## Development
 
-### Chạy tests
+### Run tests
 ```bash
 python manage.py test
 ```
 
-### Tạo migrations mới
+### Create new migrations
 ```bash
 python manage.py makemigrations
 python manage.py migrate
@@ -154,25 +154,25 @@ python manage.py collectstatic
 
 ## Production Deployment
 
-Dự án đã được cấu hình với:
-- Gunicorn cho WSGI server
-- WhiteNoise cho static files
-- Hỗ trợ MySQL/PostgreSQL
+The project is configured with:
+- Gunicorn for WSGI server
+- WhiteNoise for static files
+- MySQL/PostgreSQL support
 
-Cập nhật `settings.py` cho production:
-- Đặt `DEBUG = False`
-- Cấu hình `ALLOWED_HOSTS`
-- Thay đổi `SECRET_KEY`
-- Cấu hình database production
+Update `settings.py` for production:
+- Set `DEBUG = False`
+- Configure `ALLOWED_HOSTS`
+- Change `SECRET_KEY`
+- Configure production database
 
-## Đóng góp
+## Contributing
 
-Mọi đóng góp đều được chào đón. Vui lòng tạo pull request hoặc báo cáo issues.
+Contributions are welcome! Please feel free to submit a Pull Request or report issues.
 
 ## License
 
-[Thêm thông tin license của bạn]
+[Add your license information]
 
-## Liên hệ
+## Contact
 
-[Thêm thông tin liên hệ của bạn]
+[Add your contact information]
